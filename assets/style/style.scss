@@ -1,0 +1,26 @@
+section {
+  border: 1px dashed #ff4500;
+  margin-bottom: 30px;
+}
+
+form {
+  padding: 15px;
+}
+
+// Everything above here should probably be removed once the layout structure
+// is extracted into templates. The above styles are just so things look decent
+// in a browser.
+
+ul#product-search-results {
+  margin: 0;
+  padding: 0;
+
+  li {
+    list-style-type: none;
+
+    .product-label {
+      font-weight: bold;
+      font-size: larger;
+    }
+  }
+}

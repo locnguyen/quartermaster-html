@@ -1,0 +1,15 @@
+section {
+  border: 1px dashed #e9e9e9;
+  margin-bottom: 30px; }
+
+form {
+  padding: 15px; }
+
+ul#product-search-results {
+  margin: 0;
+  padding: 0; }
+  ul#product-search-results li {
+    list-style-type: none; }
+    ul#product-search-results li .product-label {
+      font-weight: bold;
+      font-size: larger; }

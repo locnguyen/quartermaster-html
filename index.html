@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Quartermaster: Interface structure</title>
+        <link rel="stylesheet" type="text/css" href="assets/bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="assets/style/style.css"/>
+        <noscript>Y u no enable JavaScript?!</noscript>
+    </head>
+
+    <body>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div id="sidebar-area" class="span2">
+                    <nav id="side-nav">
+                        <ul class="nav nav-tabs nav-stacked">
+                            <li>
+                                <a href="#">Home</a>
+                            </li>
+                            <li>
+                                <a href="#">Reservations</a>
+                            </li>
+                            <li>
+                                <a href="#">Products</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div><!-- // End sidebar -->
+
+                <div id="content-area" class="span10">
+                    <section id="product-search-section">
+                        <form id="product-search-form" method="GET">
+                            <input type="search" name="product" placeholder="Product search"/>
+                        </form>
+
+                        <form id="add-to-reservation-form" class="form-horizontal">
+                            <ul id="product-search-results">
+                                <li>
+                                    <div class="product-label">
+                                        <a href="#" data-product-id="1">Olympus OM-D EM5</a>
+                                    </div>
+                                    <table class="table" id="product-1-assets">
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <th>Asset ID</th>
+                                            <th>Available Date</th>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"/> </td>
+                                            <td>123</td>
+                                            <td>Immediately</td>
+                                        </tr>
+                                        <tr class="error unavailable">
+                                            <td><input type="checkbox" disabled></td>
+                                            <td>124</td>
+                                            <td>12/1/12</td>
+                                        </tr>
+                                    </table>
+
+                                </li>
+                                <li>
+                                    <div class="product-label">
+                                        <a href="#" data-product-id="2">Panasonic GF1</a>
+                                    </div>
+                                    <table class="table" id="product-2-assets">
+                                        <tr>
+                                            <th>&nbsp;</th>
+                                            <th>Asset ID</th>
+                                            <th>Available Date</th>
+                                        </tr>
+                                        <tr class="error unavailable">
+                                            <td><input type="checkbox" disabled/></td>
+                                            <td>125</td>
+                                            <td>01/01/2013</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td>126</td>
+                                            <td>Immediately</td>
+                                        </tr>
+                                    </table>
+                                </li>
+                            </ul>
+
+                            <button class="btn">Add to Order</button>
+                            <button class="btn">Add to Existing Reservation</button>
+                        </form>
+                    </section>
+
+                    <section id="new-product-section">
+                        <form id="new-product-form" method="POST" class="form-horizontal">
+                            <fieldset>
+                                <legend>New Product</legend>
+                            </fieldset>
+
+                            <div class="control-group">
+                                <label class="control-label">Manufacturer</label>
+                                <div class="controls">
+                                    <input type="text" name="manufacturer" placeholder="Manufacturer" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Model Name</label>
+                                <div class="controls">
+                                    <input type="text" name="modelName" placeholder="Model Name" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Notes</label>
+                                <div class="controls">
+                                    <textarea name="notes"></textarea>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </section><!-- // End new product section -->
+
+                    <section id="new-reservation-section">
+                        <form id="new-reservation-form" method="POST" class="form-horizontal">
+                            <fieldset>
+                                <legend>New Reservation</legend>
+                            </fieldset>
+                            <div class="control-group">
+                                <label class="control-label">Name</label>
+                                <div class="controls">
+                                    <input type="text" name="name" placeholder="Name" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Start Date</label>
+                                <div class="controls">
+                                    <input type="text" name="startDate" placeholder="Start Date" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">End Date</label>
+                                <div class="controls">
+                                    <input type="text" name="endDate" placeholder="End Date" />
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Notes</label>
+                                <div class="controls">
+                                    <textarea name="notes"></textarea>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Included Assets</label>
+                                <div class="controls">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    <input type="checkbox" class="toggle-all-children"/>
+                                                </th>
+                                                <th>
+                                                    Asset ID
+                                                </th>
+                                                <th>
+                                                    Product
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox"/>
+                                                </td>
+                                                <td>
+                                                    123
+                                                </td>
+                                                <td>
+                                                    Olympus OM-D EM5
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    <input type="checkbox"/>
+                                                </td>
+                                                <td>
+                                                    124
+                                                </td>
+                                                <td>
+                                                    Panasonic GF1
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </section><!-- // End new reservation section -->
+
+                    <section id="new-asset-section" class="form-horizontal">
+                        <form id="new-asset-form" method="POST">
+                            <fieldset>
+                                <legend>New Asset</legend>
+                            </fieldset>
+                            <div class="control-group">
+                                <label class="control-label">Product</label>
+                                <div class="controls">
+                                    <select name="product_id">
+                                        <option>Panasonic GF1</option>
+                                        <option>Olympus OM-D EM5</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Acquire Date</label>
+                                <div class="controls">
+                                    <input type="text" name="acquireDate" id="acquire-date-field"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Serial Number</label>
+                                <div class="controls">
+                                    <input type="text" name="serialNumber"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <label class="control-label">Service Tag</label>
+                                <div class="controls">
+                                    <input type="text" name="serviceTag"/>
+                                </div>
+                            </div>
+                            <div class="control-group">
+                                <div class="controls">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </section><!-- // End new asset section -->
+                </div><!-- // End content area -->
+            </div><!-- // End top-most .row-fluid -->
+        </div>
+
+
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/jquery-ui.js"></script>>
+        <script type="text/javascript" src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $('#acquire-date-field').datepicker();
+
+                var searchResults = $('#product-search-results');
+
+                searchResults.find('li table').hide();
+
+                searchResults.on('click', 'li a[data-product-id]', function() {
+                    var assetTable = $('#product-' + $(this).data('product-id') + '-assets');
+                    if (assetTable.is(':hidden')) {
+                        assetTable.show();
+                    }
+                    else {
+                        assetTable.hide();
+                    }
+                });
+
+                searchResults.on('click', 'li table tr:not(.unavailable)', function() {
+
+                    var chkBox = $(this).find('input[type=checkbox]');
+
+                    console.log('tap!', !chkBox.prop('checked'));
+
+                    chkBox.prop('checked', !chkBox.prop('checked'));
+                });
+            });
+        </script>
+    </body>
+</html>
